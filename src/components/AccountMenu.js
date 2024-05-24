@@ -32,7 +32,7 @@ const AccountMenu = () => {
                         <Avatar sx={{ width: 32, height: 32 }}>
                             {String(currentUser.role === 'Student' ? currentUser.firstName :
                                     currentUser.role === 'Teacher' ? currentUser.fullName :
-                                    currentUser.role === 'Admin' ? currentUser.name : 
+                                    currentUser.role === 'Admin' ? currentUser.fullname : 
                                     currentUser.role === 'Parent' ? currentUser.name : 
                                     'U').charAt(0)}
                         </Avatar>

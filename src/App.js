@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import Homepage from './pages/Homepage';
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -9,7 +9,6 @@ import ParentDashboard from './pages/parent/ParentDashboard';
 import LoginPage from './pages/LoginPage';
 import AdminRegisterPage from './pages/admin/AdminRegisterPage';
 import ErrorPage from "./components/ErrorPage";
-import { ContactUs } from "./pages/ContactUs";
 
 const App = () => {
   const { currentRole } = useSelector(state => state.user);
@@ -19,8 +18,6 @@ const App = () => {
       {currentRole === null &&
         <Routes>
           <Route path="/" element={<Homepage />} />
-
-          <Route path="/Contactus" element={<ContactUs />} />
 
           <Route path="/Adminlogin" element={<LoginPage role="Admin" />} />
           <Route path="/Studentlogin" element={<LoginPage role="Student" />} />

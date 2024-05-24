@@ -17,7 +17,7 @@ const SeeNotice = () => {
         else {
             dispatch(getAllNotices(currentUser.school._id, "Notice"));
         }
-    }, [dispatch]);
+    }, [dispatch, currentRole, currentUser._id, currentUser.school._id]);
 
     if (error) {
         console.log(error);
@@ -25,7 +25,7 @@ const SeeNotice = () => {
 
     const noticeColumns = [
         { id: 'title', label: 'Title', minWidth: 170 },
-        { id: 'details', label: 'Details', minWidth: 100 },
+        { id: 'details', label: 'Details', minWidth: 600 },
         { id: 'date', label: 'Date', minWidth: 170 },
     ];
 
