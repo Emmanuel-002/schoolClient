@@ -49,6 +49,7 @@ import UpdateStudent from './studentRelated/UpdateStudent';
 import ViewMessage from '../ViewMessage';
 import SeeMessages from '../SeeMessages';
 import SendMessage from '../SendMessage';
+import ReplyMessage from '../ReplyMessage';
 
 const AdminDashboard = () => {
     const [open, setOpen] = useState(false);
@@ -104,9 +105,10 @@ const AdminDashboard = () => {
                         <Route path='/*' element={<Navigate to="/" />} />
                         <Route path="/Admin/dashboard" element={<AdminHomePage />} />
                         <Route path="/Admin/profile" element={<AdminProfile />} />
-                        <Route path="/Admin/messages" element={<SeeMessages />} />
-                        <Route path="/Admin/sendmessage" element={<SendMessage />} />
-                        <Route path="/Message/:id" element={<ViewMessage />} />
+                        <Route path="/Messages/messages" element={<SeeMessages />} />
+                        <Route path="/Messages/sendmessage" element={<SendMessage />} />
+                        <Route path="/Messages/message/:id" element={<ViewMessage />} />
+                        <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 
                         {/* Notice */}
                         <Route path="/Admin/addnotice" element={<AddNotice />} />

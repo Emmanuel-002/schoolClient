@@ -60,7 +60,13 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Notices" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Admin/messages">
+                <ListItemButton component={Link} to="/Messages/sendmessage">
+                    <ListItemIcon>
+                        <ReportIcon color={location.pathname.startsWith("/Messages/sendmessage") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Message" />
+                </ListItemButton>
+                <ListItemButton component={Link} to="/Messages/messages">
                     <ListItemIcon>
                         <ReportIcon color={location.pathname.startsWith("/Admin/messages") ? 'primary' : 'inherit'} />
                     </ListItemIcon>

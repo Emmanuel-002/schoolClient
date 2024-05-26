@@ -46,11 +46,11 @@ const SeeMessages = () => {
       <>
         <BlueButton variant="contained"
           onClick={() => {
-            navigate("/Parent/message/" + row.id)}
+            navigate("/Messages/message/" + row.id)}
           }>
           Read
       </BlueButton>
-      <Checkbox {...label} checked={row.response===undefined ? false : true} />
+      <Checkbox {...label} checked={row.response==="" ? false : true} />
       </>
     );
   };

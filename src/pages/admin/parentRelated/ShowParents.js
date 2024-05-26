@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getAllParents } from '../../../redux/parentRelated/parentHandle';
 import {
     Paper, Table, TableBody, TableContainer,
@@ -18,6 +18,10 @@ import { getAllTeachers } from '../../../redux/teacherRelated/teacherHandle';
 const ShowParents = () => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const params = useParams()
+    // const deleteID = params.id
+    // const address = "Parent"
+    
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -47,7 +51,7 @@ const ShowParents = () => {
 
     const deleteHandler = (deleteID, address) => {
         dispatch(deleteUser(deleteID, address)).then(() => {
-            dispatch(getAllTeachers(currentUser._id));
+            dispatch(getAllParents(currentUser._id));
         });
     };
 

@@ -12,9 +12,8 @@ const SendMessage = () => {
     const { status, currentUser, error } = useSelector(state => state.user);
     const authorID = currentUser._id;
     const authorName = currentUser.name;
-    const school = currentUser.school;
     const address = "Message";
-    const [responseBody, setResponseBody] = useState({});
+    const [recipientEmail, setRecipientEmail] = useState('');
     const [messageBody, setMessageBody] = useState({
         text:{
             authorEmail: currentUser.email,
@@ -26,13 +25,15 @@ const SendMessage = () => {
     const [message, setMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
 
-    const fields = {authorID, authorName, messageBody,  responseBody,  school, };
+    const fields = {authorID, authorName, recipientEmail, messageBody };
 
     const submitHandler = (event) => {
         event.preventDefault()
         setLoader(true)
         dispatch(addStuff(fields, address))
-        navigate("/Parent/messages")
+        .then(res=>{
+            navigate("/Messages/messages")
+        })
     };
 
     useEffect(() => {
@@ -76,13 +77,8 @@ const SendMessage = () => {
                                     fullWidth
                                     label="Target Email"
                                     type="email"
-                                    value={responseBody.text?.authorEmail}
-                                    onChange={(event) => setResponseBody({
-                                        text:{
-                                            ...responseBody.text,
-                                        authorEmail: event.target.value,
-                                        }
-                                    })} 
+                                    value={recipientEmail}
+                                    onChange={(event) => setRecipientEmail(event.target.value)} 
                                     required
                                     InputLabelProps={{
                                         shrink: true,

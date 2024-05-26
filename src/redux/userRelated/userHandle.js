@@ -58,7 +58,6 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserDetails = (id, address) => async (dispatch) => {
     dispatch(getRequest());
-console.log(id, address)
     try {
         const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`);
         if (result.data) {
@@ -71,7 +70,6 @@ console.log(id, address)
 
 export const deleteUser = (id, address) => async (dispatch) => {
     dispatch(getRequest());
-
     try {
         const result = await axios.delete(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`);
         if (result.data.message) {
@@ -91,6 +89,7 @@ export const deleteUser = (id, address) => async (dispatch) => {
 // }
 
 export const updateUser = (fields, id, address) => async (dispatch) => {
+    console.log(fields)
     dispatch(getRequest());
     try {
         const result = await axios.put(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`, fields, {

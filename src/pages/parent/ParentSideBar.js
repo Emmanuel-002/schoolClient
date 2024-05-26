@@ -32,7 +32,7 @@ const ParentSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Message" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Parent/messages">
+                <ListItemButton component={Link} to="/Messages/messages">
                     <ListItemIcon>
                         <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Parent/messages") ? 'primary' : 'inherit'} />
                     </ListItemIcon>

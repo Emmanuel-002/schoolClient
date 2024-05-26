@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserDetails, updateUser } from '../../redux/userRelated/userHandle';
+import { getUserDetails, updateUser } from '../redux/userRelated/userHandle';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Typography, Stack, TextField, CircularProgress } from '@mui/material';
-import { BlueButton } from '../../components/buttonStyles';
-import Popup from '../../components/Popup';
+import { BlueButton } from '../components/buttonStyles';
+import Popup from '../components/Popup';
 
 
 const ReplyMessage = () => {
@@ -14,35 +14,37 @@ const ReplyMessage = () => {
     const { userDetails, currentUser, loading, error } = useSelector((state) => state.user);
 
     const messageID = params.id;
-    const adminID = currentUser._id;
+    const messageLink = "Message/reply";
     const address = "Message";
 
     const [showPopup, setShowPopup] = useState(false);
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false)
 
+    const [authorEmail, setAuthorEmail] = useState('');
+    const [recipientEmail, setRecipientEmail] = useState('');
+    const [authorName, setAuthorName] = useState('');
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState('');
+    const [response, setResponse] = useState('');
+
     useEffect(() => {
         dispatch(getUserDetails(messageID, address));
     }, [dispatch, messageID]);
 
-    const [author, setAuthor] = useState('');
-    const [email, setEmail] = useState('');
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
-    const [date, setDate] = useState('');
-    const [response, setResponse] = useState('');
-
     const replyHandler = () => {
-        dispatch(updateUser({response}, messageID, address))
+        console.log(response)
+        dispatch(updateUser(fields, messageID, messageLink))
     }
+
+    const fields = {response, recipientEmail}
 
     useEffect(() => {
         if (userDetails) {
-            setAuthor(userDetails.author || '');
-            setEmail(userDetails.email || '');
-            setTitle(userDetails.title || '');
-            setText(userDetails.text || '');
-            setDate(userDetails.date || '');
+            setRecipientEmail(userDetails.recipientEmail || '')
+            setAuthorEmail(userDetails?.messageBody?.text?.authorEmail || '');
+            setAuthorName(userDetails.authorName || '');
+            setTitle(userDetails?.messageBody?.text?.title || '');
         }
     }, [userDetails]);
 
@@ -66,7 +68,7 @@ const ReplyMessage = () => {
         >
             <div>
                 <Stack spacing={1} sx={{ mb: 3 }}>
-                    <Typography variant="h6">{`Reply to ${email}`}</Typography>
+                    <Typography variant="h6">{`Reply to ${authorEmail}`}</Typography>
                 </Stack>
                 <form onSubmit={replyHandler}>
                     <Stack spacing={3}>
@@ -74,7 +76,7 @@ const ReplyMessage = () => {
                             fullWidth
                             label="From"
                             type="text"
-                            value={author}
+                            value={authorName}
                             disabled
                             InputLabelProps={{
                                 shrink: true,
@@ -84,7 +86,7 @@ const ReplyMessage = () => {
                             fullWidth
                             label="Message"
                             type="text"
-                            value={text}
+                            value={title}
                             multiline
                             disabled
                             InputLabelProps={{
@@ -96,7 +98,7 @@ const ReplyMessage = () => {
                             fullWidth
                             label="Reply"
                             variant="outlined"
-                            value={response.text}
+                            value={response}
                             onChange={(event) => {
                                 setResponse(event.target.value);
                             }}

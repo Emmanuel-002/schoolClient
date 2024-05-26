@@ -13,13 +13,13 @@ const ViewMessage = () => {
     const params = useParams()
     const dispatch = useDispatch()
     const { userDetails, currentUser, loading, error } = useSelector((state) => state.user);
-    console.log(userDetails)
+    console.log(useSelector((state) => state.user))
     const messageID = params.id
-    // const adminID = currentUser._id
     const address = "Message";
 
     useEffect(() => {
         dispatch(getUserDetails(messageID, address));
+        console.log(messageID)
     }, [dispatch, messageID]);
 
     // const [author, setAuthor] = useState('');
@@ -61,33 +61,33 @@ const ViewMessage = () => {
         navigate("/Message/reply/" + messageID);
     }
 
-    const StudentDetailsSection = () => {
+    const MessageDetailsSection = () => {
         return (
             <Grid container spacing={2}> 
                 <Grid xs={12} md={6} lg={4} padding={1}>
-               <strong>Author: {userDetails.authorName}</strong> 
+               <strong>Author: {userDetails?.authorName}</strong> 
                 <br />
-                From: {userDetails.messageBody.text.authorEmail}
+                From: {userDetails?.messageBody?.text?.authorEmail}
                 <br />
-                {/* Title: {userDetails.messageBody.text.title} */}
+                Title: {userDetails?.messageBody?.text?.title}
                 </Grid>
-                {/* <Grid xs={12} md={6} lg={4} fontStyle={'italic'} padding={1}>
-                <strong>Message: {`${userDetails.messageBody.text.body}`}</strong>
-                <br />
-                Date: {new Date(userDetails.messageBody.text.date).toLocaleDateString()}
-                <br />
-                Time: {new Date(userDetails.messageBody.text.date).toLocaleTimeString()}
-                <br />
-                </Grid> */}
                 <Grid xs={12} md={6} lg={4} fontStyle={'italic'} padding={1}>
-                    {/* {`${userDetails.responseBody.text.body!==''?
+                <strong>Message: {`${userDetails?.messageBody?.text?.body}`}</strong>
+                <br />
+                Date: {new Date(userDetails?.messageBody?.text?.date).toLocaleDateString()}
+                <br />
+                Time: {new Date(userDetails?.messageBody?.text?.date).toLocaleTimeString()}
+                <br />
+                </Grid>
+                <Grid xs={12} md={6} lg={4} fontStyle={'italic'} padding={1}>
+                    {`${userDetails.responseBody?.text?.body!==""?
                         (<>
-                            <strong>Response: {(userDetails.responseBody.text.body)}</strong>
-                            <strong>Date: {(userDetails.responseBody.text.date).toLocaleDateString()}</strong>
-                            <strong>Time: {(userDetails.responseBody.text.date).toLocaleDateString()}</strong>
+                            <strong>Response: {(userDetails?.responseBody?.text?.body)}</strong>
+                            <strong>Date: {(userDetails?.responseBody?.text?.date)?.toLocaleDateString()}</strong>
+                            <strong>Time: {(userDetails?.responseBody?.text?.date)?.toLocaleDateString()}</strong>
                         </>
                         )
-                        : 'No response yet' }`} */}
+                        : 'No response yet' }`}
                 </Grid>
             </Grid>
         )
@@ -108,12 +108,12 @@ const ViewMessage = () => {
                                 <TabList onChange={handleChange} sx={{ position: 'fixed', width: '100%', bgcolor: 'background.paper', zIndex: 1 }}>
                                     <Tab label="Details" value="1" />
                                     {/* {userDetails.response === 'No response' ? <Tab label="Reply" value="2" onClick={replyHandler} /> : ''} */}
-                                    {currentUser.role!=='Admin' ? <Tab label="Update" value="3" />:''}
+                                    <Tab label="Reply" value="3" onClick={replyHandler} />
                                 </TabList>
                             </Box>
                             <Container sx={{ marginTop: "3rem", marginBottom: "4rem" }}>
                                 <TabPanel value="1">
-                                    <StudentDetailsSection />
+                                    <MessageDetailsSection />
                                 </TabPanel>
                                 {/* <TabPanel value="2">
 
