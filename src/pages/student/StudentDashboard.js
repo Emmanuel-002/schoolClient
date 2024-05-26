@@ -16,7 +16,10 @@ import StudentHomePage from './StudentHomePage';
 import StudentProfile from './StudentProfile';
 import StudentSubjects from './StudentSubjects';
 import ViewStdAttendance from './ViewStdAttendance';
-import StudentComplain from './StudentComplain';
+import SendMessage from '../SendMessage';
+import SeeMessages from '../SeeMessages';
+import ViewMessage from '../ViewMessage';
+import ReplyMessage from '../ReplyMessage';
 import Logout from '../Logout'
 import AccountMenu from '../../components/AccountMenu';
 import { AppBar, Drawer } from '../../components/styles';
@@ -78,7 +81,10 @@ const StudentDashboard = () => {
 
                         <Route path="/Student/subjects" element={<StudentSubjects />} />
                         <Route path="/Student/attendance" element={<ViewStdAttendance />} />
-                        <Route path="/Student/complain" element={<StudentComplain />} />
+                        <Route path="/Student/sendmessage" element={<SendMessage />} />
+                        <Route path="/Messages/messages" element={<SeeMessages />} />
+                        <Route path="/Messages/message/:id" element={<ViewMessage />} />
+                        <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 
                         <Route path="/logout" element={<Logout />} />
                     </Routes>

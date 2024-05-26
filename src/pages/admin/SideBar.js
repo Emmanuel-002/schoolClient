@@ -12,6 +12,8 @@ import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccount
 import ReportIcon from '@mui/icons-material/Report';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom"
+import ChromeReaderModeIcon from '@mui/icons-material/ChromeReaderMode';
+import SendIcon from '@mui/icons-material/Send';
 
 const SideBar = () => {
     const location = useLocation();
@@ -62,15 +64,15 @@ const SideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Messages/sendmessage">
                     <ListItemIcon>
-                        <ReportIcon color={location.pathname.startsWith("/Messages/sendmessage") ? 'primary' : 'inherit'} />
+                        <SendIcon color={location.pathname.startsWith("/Messages/sendmessage") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Message" />
+                    <ListItemText primary="Send Message" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Messages/messages">
                     <ListItemIcon>
-                        <ReportIcon color={location.pathname.startsWith("/Admin/messages") ? 'primary' : 'inherit'} />
+                        <ChromeReaderModeIcon color={location.pathname.startsWith("/Admin/messages") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Messages" />
+                    <ListItemText primary="Read Messages" />
                 </ListItemButton>
             </React.Fragment>
             <Divider sx={{ my: 1 }} />

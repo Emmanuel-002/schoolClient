@@ -8,6 +8,8 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import PersonOutlineIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
+import ChromeReaderModeIcon from '@mui/icons-material/ChromeReaderMode';
+import SendIcon from '@mui/icons-material/Send';
 
 const ParentSideBar = () => {
     const location = useLocation();
@@ -28,15 +30,15 @@ const ParentSideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Parent/sendmessage">
                     <ListItemIcon>
-                        <EmailIcon color={location.pathname.startsWith("/Parent/message") ? 'primary' : 'inherit'} />
+                        <SendIcon color={location.pathname.startsWith("/Parent/message") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Message" />
+                    <ListItemText primary="Send Message" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Messages/messages">
                     <ListItemIcon>
-                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Parent/messages") ? 'primary' : 'inherit'} />
+                        <ChromeReaderModeIcon color={location.pathname.startsWith("/Parent/messages") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Messages" />
+                    <ListItemText primary="Read Messages" />
                 </ListItemButton>
             </React.Fragment>
             <Divider sx={{ my: 1 }} />

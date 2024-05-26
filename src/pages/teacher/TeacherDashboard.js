@@ -23,6 +23,10 @@ import TeacherHomePage from './TeacherHomePage';
 import TeacherProfile from './TeacherProfile';
 import TeacherViewStudent from './TeacherViewStudent';
 import StudentExamMarks from '../admin/studentRelated/StudentExamMarks';
+import SendMessage from '../SendMessage';
+import SeeMessages from '../SeeMessages';
+import ViewMessage from '../ViewMessage';
+import ReplyMessage from '../ReplyMessage';
 
 const TeacherDashboard = () => {
     const [open, setOpen] = useState(true);
@@ -79,7 +83,10 @@ const TeacherDashboard = () => {
                         <Route path="/Teacher/dashboard" element={<TeacherHomePage />} />
                         <Route path="/Teacher/profile" element={<TeacherProfile />} />
 
-                        <Route path="/Teacher/complain" element={<TeacherComplain />} />
+                        <Route path="/Teacher/sendmessage" element={<SendMessage />} />
+                        <Route path="/Messages/messages" element={<SeeMessages />} />
+                        <Route path="/Messages/message/:id" element={<ViewMessage />} />
+                        <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 
                         <Route path="/Teacher/class" element={<TeacherClassDetails />} />
                         <Route path="/Teacher/class/student/:id" element={<TeacherViewStudent />} />

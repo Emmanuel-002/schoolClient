@@ -8,6 +8,8 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import ChromeReaderModeIcon from '@mui/icons-material/ChromeReaderMode';
+import SendIcon from '@mui/icons-material/Send';
 
 const StudentSideBar = () => {
     const location = useLocation();
@@ -32,11 +34,17 @@ const StudentSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Attendance" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Student/complain">
+                <ListItemButton component={Link} to="/Student/sendmessage">
                     <ListItemIcon>
-                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Student/complain") ? 'primary' : 'inherit'} />
+                        <SendIcon color={location.pathname.startsWith("/Student/sendmessage") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Complain" />
+                    <ListItemText primary="Send Message" />
+                </ListItemButton>
+                <ListItemButton component={Link} to="/Messages/messages">
+                    <ListItemIcon>
+                        <ChromeReaderModeIcon color={location.pathname.startsWith("/Messages/messages") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Read Message" />
                 </ListItemButton>
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
