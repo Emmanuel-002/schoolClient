@@ -6,6 +6,7 @@ import { sclassReducer } from './sclassRelated/sclassSlice';
 import { teacherReducer } from './teacherRelated/teacherSlice';
 import { parentReducer } from './parentRelated/parentSlice';
 import { messageReducer } from './messageRelated/messageSlice';
+import { homepageReducer } from './homepageRelated/homepageSlice';
 
 const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
         parent: parentReducer,
         notice: noticeReducer,
         message: messageReducer,
+        homepage: homepageReducer,
         sclass: sclassReducer,
     },
 });
