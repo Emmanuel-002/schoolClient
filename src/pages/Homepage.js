@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {
     CssBaseline,
     Box,
+    Paper,
     Toolbar,
     List,
     Typography,
@@ -35,7 +36,8 @@ import { getAllUsers } from "../redux/homepageRelated/homepageHandle";
 import Button from "./components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { render } from "react-dom";
-
+import TableViewTemplate from "../components/TableViewTemplate";
+import Footer from "../components/Footer";
 
 const Homepage = () => {
 
@@ -47,6 +49,44 @@ const Homepage = () => {
         dispatch(getAllUsers());
     }, [dispatch]);
 
+    const noticeTable = () => {
+        const noticeColumns = [
+            { id: 'title', label: 'Title', minWidth: 120 },
+            { id: 'details', label: 'Details', minWidth: 250 },
+            { id: 'date', label: 'Date', minWidth: 120 },
+        ];
+    
+        const noticeRows = list?.notices?.map((notice) => {
+            const date = new Date(notice.date);
+            const dateString = date.toString() !== "Invalid Date" ? date.toISOString().substring(0, 10) : "Invalid Date";
+            return {
+                title: notice.title,
+                details: notice.details,
+                date: dateString,
+                id: notice._id,
+            };
+        });
+        return (
+            <div style={{ marginTop: '50px', marginRight: '20px' }}>
+                {loading ? (
+                    <div style={{ fontSize: '20px' }}>Please Wait...</div>
+                ) : response ? (
+                    <div style={{ fontSize: '20px' }}>No Notices to Show Right Now</div>
+                ) : (
+                    <>
+                        <h3 style={{ fontSize: '30px', marginBottom: '40px' }}>School News & Updates</h3>
+                        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                            {Array.isArray(list?.notices) && list?.notices.length > 0 &&
+                                <TableViewTemplate columns={noticeColumns} rows={noticeRows} />
+                            }
+                        </Paper>
+                    </>
+                )}
+            </div>
+    
+        )
+    }
+
     const renderList = () => {
         if(loading){
             return(
@@ -54,7 +94,13 @@ const Homepage = () => {
                     Please Wait
                 </Typography>
             )
-        }else if(response){
+        }else if(error){
+            return(
+           <Typography style={{marginTop:'2rem'}}>
+                Data not available
+            </Typography>
+            )
+        }else{
             return(
             <Grid container spacing={1} style={{marginTop:'2rem'}}>
                 <Grid item>
@@ -102,12 +148,6 @@ const Homepage = () => {
                     </Card>
                 </Grid>
             </Grid>
-            )
-        }else if(error){
-            return(
-           <Typography style={{marginTop:'2rem'}}>
-                Data not available
-            </Typography>
             )
         }
     }
@@ -224,6 +264,10 @@ const Homepage = () => {
                             </Grid>
                         </Grid>
                 </Container>
+                <Container maxWidth='xxl'>
+                    {noticeTable()}
+                </Container>
+                <Footer />
                 </>
     );
 }

@@ -25,7 +25,7 @@ const homepageSlice = createSlice({
             state.list = action.payload;
             state.loading = false;
             state.error = null;
-            state.response = true;
+            state.response = null;
         },
         getFailed: (state, action) => {
             state.response = action.payload;
