@@ -13,6 +13,8 @@ import { getAllSclasses } from '../../redux/sclassRelated/sclassHandle';
 import { getAllStudents } from '../../redux/studentRelated/studentHandle';
 import { getAllTeachers } from '../../redux/teacherRelated/teacherHandle';
 import { getAllParents } from '../../redux/parentRelated/parentHandle';
+import Footer from '../../components/Footer';
+
 
 const AdminHomePage = () => {
     const dispatch = useDispatch();
@@ -93,6 +95,7 @@ const AdminHomePage = () => {
                     </Grid>
                 </Grid>
             </Container>
+            <Footer />
         </>
     );
 };

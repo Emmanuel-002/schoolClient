@@ -73,12 +73,6 @@ const HomeNav = () => {
                     </ListItemIcon>
                     <ListItemText primary="Parent" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Contactus">
-                    <ListItemIcon>
-                        <FamilyRestroomIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Contact us" />
-                </ListItemButton>
             </Menu>
         </>
     );

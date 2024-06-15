@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getParentStudents } from '../../redux/studentRelated/studentHandle';
 import ShowParentStudents from './ShowParentStudents';
+import Footer from '../../components/Footer';
 
 const ParentHomePage = () => {
     const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const ParentHomePage = () => {
                     </Grid>
                 </Grid>
             </Container>
+            <Footer />
         </>
     )
 }

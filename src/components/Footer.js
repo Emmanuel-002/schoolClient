@@ -1,6 +1,6 @@
 import { Typography, Grid, Container, FormControl, InputLabel, TextField, Box, FormHelperText } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
-// import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -34,16 +34,10 @@ const Footer = () => {
             <a target='_blank' href={`https://wa.me/+2348060515523`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><WhatsAppIcon/></a>
             <a target='_blank' href={`https://facebook.com/araoye.emmanueloluwasegun`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><FacebookIcon /></a>
             {/* <a target='_blank' href={`https://facebook.com/araoye.emmanueloluwasegun`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><XIcon /></a> */}
-            <a target='_blank' href={`https://facebook.com/araoye.emmanueloluwasegun`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><InstagramIcon /></a><br/>
-            <a target='_blank' href='tel:08060515523:' style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><PhoneIcon /> +2348060515523</a><br/>
-            <a target='_blank' href="mailto:nafowasec_abuja@yahoo.com" style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}> <MailIcon />emmanuelaraoye794@gmail.com</a><br/>
+            <a target='_blank' href={`https://www.linkedin.com/in/emmanuel-araoyr-1b150a235`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><LinkedInIcon /></a><br/>
+            <a target='_blank' href='tel:08060515523' style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><PhoneIcon /> +2348060515523</a><br/>
+            <a target='_blank' href="mailto:emmanuelaraoye794@gmail.com" style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}> <MailIcon />emmanuelaraoye794@gmail.com</a><br/>
             </div>
-            {/* <h2>Quick Links</h2>
-            <div>
-            <a href={`#services`} style={{textDecoration:'none',color:'#1565c0'}}>Services</a><br />
-            <a href={`#news`} style={{textDecoration:'none',color:'#1565c0'}}>News</a><br/>
-            <a href={`#about`} style={{textDecoration:'none',color:'#1565c0'}}>About</a>
-            </div> */}
         </Grid>
         <Grid item xs={12} md={6} lg={4} style={{textAlign:'center',padding:'20px'}}>
         <form action="https://public.herotofu.com/v1/ab6ca490-1d5e-11ef-90b8-b52fc5a15495" method="post" accept-charset="UTF-8">

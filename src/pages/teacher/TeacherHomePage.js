@@ -9,6 +9,7 @@ import Time from "../../assets/time.svg";
 import { getClassStudents, getSubjectDetails } from '../../redux/sclassRelated/sclassHandle';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Footer from '../../components/Footer';
 
 const TeacherHomePage = () => {
     const dispatch = useDispatch();
@@ -73,6 +74,7 @@ const TeacherHomePage = () => {
                     </Grid>
                 </Grid>
             </Container>
+            <Footer />
         </>
     )
 }
