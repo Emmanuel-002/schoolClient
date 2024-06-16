@@ -20,10 +20,6 @@ const SeeMessages = () => {
     dispatch(getAllMessages(currentUser._id, "Message"));
   }, [currentUser._id, dispatch]);
 
-  if (error) {
-    console.log(error);
-  }
-
   const messageColumns = [
     { id: 'author', label: 'Author', minWidth: 120 },
     { id: 'title', label: 'Title', minWidth: 250 },
