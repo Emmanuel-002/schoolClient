@@ -1,44 +1,42 @@
 import { useEffect, useState } from 'react';
 import { Box, CircularProgress, Stack, TextField, Typography } from '@mui/material';
-import Popup from '../../components/Popup';
-import { BlueButton } from '../../components/buttonStyles';
-import { addStuff } from '../../redux/userRelated/userHandle';
+import Popup from '../components/Popup';
+import { BlueButton } from '../components/buttonStyles';
+import { replyMessage } from '../redux/messageRelated/messageHandle';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const StudentComplain = () => {
-    const [complaint, setComplaint] = useState("");
-    const [date, setDate] = useState("");
-
-    const dispatch = useDispatch()
-
+const ReplyMessage = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const params = useParams()
     const { status, currentUser, error } = useSelector(state => state.user);
-
-    const user = currentUser._id
-    const school = currentUser.school._id
-    const address = "Complain"
+    const authorID = currentUser._id;
+    const authorEmail = currentUser._email;
+    const messageID = params.id
+    
+    const address = "Message/reply";
+    const [text, setText] = useState('');
 
     const [loader, setLoader] = useState(false)
     const [message, setMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
 
-    const fields = {
-        user,
-        date,
-        complaint,
-        school,
-    };
+    const fields = {authorID, authorEmail, text };
+
 
     const submitHandler = (event) => {
         event.preventDefault()
         setLoader(true)
-        dispatch(addStuff(fields, address))
+        dispatch(replyMessage(fields, address, messageID))
+        navigate(`/Message/${messageID}`)
     };
 
     useEffect(() => {
         if (status === "added") {
             setLoader(false)
             setShowPopup(true)
-            setMessage("Done Successfully")
+            setMessage("Your message has been sent")
         }
         else if (error) {
             setLoader(false)
@@ -67,27 +65,17 @@ const StudentComplain = () => {
                 >
                     <div>
                         <Stack spacing={1} sx={{ mb: 3 }}>
-                            <Typography variant="h4">Complain</Typography>
+                            <Typography variant="h4">Reply Message</Typography>
                         </Stack>
                         <form onSubmit={submitHandler}>
                             <Stack spacing={3}>
                                 <TextField
                                     fullWidth
-                                    label="Select Date"
-                                    type="date"
-                                    value={date}
-                                    onChange={(event) => setDate(event.target.value)} required
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                />
-                                <TextField
-                                    fullWidth
-                                    label="Write your complain"
+                                    label="Write your message"
                                     variant="outlined"
-                                    value={complaint}
+                                    value={text}
                                     onChange={(event) => {
-                                        setComplaint(event.target.value);
+                                        setText( event.target.value);
                                     }}
                                     required
                                     multiline
@@ -102,7 +90,7 @@ const StudentComplain = () => {
                                 type="submit"
                                 disabled={loader}
                             >
-                                {loader ? <CircularProgress size={24} color="inherit" /> : "Add"}
+                                {loader ? <CircularProgress size={24} color="inherit" /> : "Submit"}
                             </BlueButton>
                         </form>
                     </div>
@@ -113,4 +101,4 @@ const StudentComplain = () => {
     );
 };
 
-export default StudentComplain;
+export default ReplyMessage;

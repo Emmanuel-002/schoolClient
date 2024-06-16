@@ -34,7 +34,7 @@ const Footer = () => {
             <a target='_blank' href={`https://wa.me/+2348060515523`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><WhatsAppIcon/></a>
             <a target='_blank' href={`https://facebook.com/araoye.emmanueloluwasegun`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><FacebookIcon /></a>
             {/* <a target='_blank' href={`https://facebook.com/araoye.emmanueloluwasegun`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><XIcon /></a> */}
-            <a target='_blank' href={`https://www.linkedin.com/in/emmanuel-araoyr-1b150a235`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><LinkedInIcon /></a><br/>
+            <a target='_blank' href={`https://www.linkedin.com/in/emmanuel-araoye-1b150a235`} style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><LinkedInIcon /></a><br/>
             <a target='_blank' href='tel:08060515523' style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}><PhoneIcon /> +2348060515523</a><br/>
             <a target='_blank' href="mailto:emmanuelaraoye794@gmail.com" style={{textDecoration:'none',color:'#1565c0',padding:'10px'}}> <MailIcon />emmanuelaraoye794@gmail.com</a><br/>
             </div>

@@ -12,8 +12,8 @@ const SendMessage = () => {
     const { status, currentUser, error } = useSelector(state => state.user);
     const authorID = currentUser._id;
     const authorName = currentUser.name;
-    const school = currentUser.school;
     const address = "Message";
+    const [recipientEmail, setRecipientEmail]  = useState('');
     const [responseBody, setResponseBody] = useState({});
     const [messageBody, setMessageBody] = useState({
         text:{
@@ -26,7 +26,7 @@ const SendMessage = () => {
     const [message, setMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
 
-    const fields = {authorID, authorName, messageBody,  responseBody,  school, };
+    const fields = {authorID, recipientEmail, authorName, messageBody,  responseBody };
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -68,7 +68,7 @@ const SendMessage = () => {
                 >
                     <div>
                         <Stack spacing={1} sx={{ mb: 3 }}>
-                            <Typography variant="h4">Complain Form</Typography>
+                            <Typography variant="h4">Message Form</Typography>
                         </Stack>
                         <form onSubmit={submitHandler}>
                             <Stack spacing={3}>
@@ -76,13 +76,8 @@ const SendMessage = () => {
                                     fullWidth
                                     label="Target Email"
                                     type="email"
-                                    value={responseBody.text?.authorEmail}
-                                    onChange={(event) => setResponseBody({
-                                        text:{
-                                            ...responseBody.text,
-                                        authorEmail: event.target.value,
-                                        }
-                                    })} 
+                                    value={recipientEmail}
+                                    onChange={(event) => setRecipientEmail(event.target.value)} 
                                     required
                                     InputLabelProps={{
                                         shrink: true,

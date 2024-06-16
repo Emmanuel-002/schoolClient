@@ -22,6 +22,7 @@ import ViewParentStudent from './ViewParentStudent';
 import SendMessage from '../SendMessage';
 import SeeMessages from '../SeeMessages';
 import ViewMessage from '../ViewMessage';
+import ReplyMessage from '../ReplyMessage';
 
 const ParentDashboard = () => {
     const [open, setOpen] = useState(true);
@@ -81,7 +82,8 @@ const ParentDashboard = () => {
                         <Route path="/Student/attendance" element={<ViewStdAttendance />} />
                         <Route path="/Parent/sendmessage" element={<SendMessage />} />
                         <Route path="/Parent/messages" element={<SeeMessages />} />
-                        <Route path="/Parent/message/:id" element={<ViewMessage />} />
+                        <Route path="/Message/:id" element={<ViewMessage />} />
+                        <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 
                         <Route path="/logout" element={<Logout />} />
                     </Routes>

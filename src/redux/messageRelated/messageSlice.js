@@ -20,6 +20,12 @@ const messageSlice = createSlice({
             state.error = null;
             state.response = null;
         },
+        stuffAdded: (state, action) => {
+            state.status = 'added';
+            state.response = null;
+            state.error = null;
+            state.tempDetails = action.payload;
+        },
         getFailed: (state, action) => {
             state.response = action.payload;
             state.loading = false;
@@ -35,6 +41,7 @@ const messageSlice = createSlice({
 export const {
     getRequest,
     getSuccess,
+    stuffAdded,
     getFailed,
     getError
 } = messageSlice.actions;

@@ -7,6 +7,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
+import EmailIcon from '@mui/icons-material/Email';
 import { useSelector } from 'react-redux';
 
 const TeacherSideBar = () => {
@@ -29,11 +30,17 @@ const TeacherSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary={`Class ${sclassName.sclassName}`} />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Teacher/complain">
+                <ListItemButton component={Link} to="/Teacher/sendmessage">
                     <ListItemIcon>
-                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Teacher/complain") ? 'primary' : 'inherit'} />
+                        <EmailIcon color={location.pathname.startsWith("/Teacher/sendmessage") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Complain" />
+                    <ListItemText primary="Message" />
+                </ListItemButton>
+                <ListItemButton component={Link} to="/Teacher/seemessages">
+                    <ListItemIcon>
+                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Teacher/seemessages") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Messages" />
                 </ListItemButton>
             </React.Fragment>
             <Divider sx={{ my: 1 }} />

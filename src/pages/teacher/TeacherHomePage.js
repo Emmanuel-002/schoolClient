@@ -29,7 +29,8 @@ const TeacherHomePage = () => {
     const numberOfSessions = subjectDetails && subjectDetails.sessions
 
     return (
-        <>
+        <div style={{minHeight:'100vh',display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'space-between'}}>
+            <div>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={3} lg={3}>
@@ -74,8 +75,9 @@ const TeacherHomePage = () => {
                     </Grid>
                 </Grid>
             </Container>
+            </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

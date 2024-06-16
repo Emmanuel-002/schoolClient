@@ -25,9 +25,9 @@ const SeeMessages = () => {
   }
 
   const messageColumns = [
-    { id: 'author', label: 'Author', minWidth: 170 },
-    { id: 'title', label: 'Title', minWidth: 100 },
-    { id: 'date', label: 'Date', minWidth: 170 },
+    { id: 'author', label: 'Author', minWidth: 120 },
+    { id: 'title', label: 'Title', minWidth: 250 },
+    { id: 'date', label: 'Date', minWidth: 120 },
   ];
   const messageRows = messageList && messageList.length > 0 && messageList.map((message) => {
     const date = new Date(message.messageBody.text.date);
@@ -46,11 +46,11 @@ const SeeMessages = () => {
       <>
         <BlueButton variant="contained"
           onClick={() => {
-            navigate("/Parent/message/" + row.id)}
+            navigate(`/Message/${row.id}`)}
           }>
           Read
       </BlueButton>
-      <Checkbox {...label} checked={row.response===undefined ? false : true} />
+      <Checkbox {...label} checked={row.response==='' ? false : true} />
       </>
     );
   };

@@ -170,6 +170,8 @@ const Homepage = () => {
                     </Toolbar>
                     </Container>
                 </Box>
+                <div style={{minHeight:'100vh',display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'space-between'}}>
+                <div>
                 <Container maxWidth='xxl' style={{marginTop:'1rem'}}>
                 <Grid container>
                             <Grid item xs={12} md={6} lg={6}>
@@ -189,9 +191,6 @@ const Homepage = () => {
                                             quod pariatur, autem aliquid deleniti unde necessitatibus sint numquam qui atque 
                                             itaque! Possimus blanditiis, ab quo, laboriosam harum, repellendus esse quisquam
                                         </Typography>
-                                        {/* <CardActionArea>
-                                            <button>Enrol</button>
-                                        </CardActionArea> */}
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -210,45 +209,38 @@ const Homepage = () => {
             <Container maxWidth='xl' style={{marginTop:'1rem'}}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} lg={6}>
-                                {/* <Card style={{borderRadius:'5px 0px 0px 5px'}}> */}
+                               
                                 <Carousel autoPlay infiniteLoop>
-                                    {/* <Card style={{ borderRadius:'0px 5px 5px 0px'}}> */}
                                         <CardMedia
                                             component="img"
                                             height="400px"
                                             image={classroom}
                                             alt="Classroom"
                                         />
-                                    {/* </Card> */}
-                                    {/* <Card style={{ borderRadius:'0px 5px 5px 0px'}}> */}
+                                
                                         <CardMedia
                                             component="img"
                                             height="400px"
                                             image={laboratory}
                                             alt="Science Laboratory"
                                         />
-                                    {/* </Card> */}
-                                    {/* <Card style={{ borderRadius:'0px 5px 5px 0px'}}> */}
+                                   
                                         <CardMedia
                                             component="img"
                                             height="400px"
                                             image={computerLab}
                                             alt="Computer Laboratory"
                                         />
-                                    {/* </Card> */}
-                                    {/* <Card style={{ borderRadius:'0px 5px 5px 0px'}}> */}
+                                    
                                         <CardMedia
                                             component="img"
                                             height="400px"
                                             image={hall}
                                             alt="Hall"
                                         />
-                                    {/* </Card> */}
                                 </Carousel>
-                                {/* </Card> */}
                             </Grid>
                             <Grid item xs={12} md={6} lg={6}>
-                                {/* <Card style={{height:'20rem', borderRadius:'0px 5px 5px 0px'}}> */}
                                     <CardHeader
                                         title='About SchoolCool'
                                     />
@@ -260,14 +252,15 @@ const Homepage = () => {
                                         </Typography>
                                         {renderList()}
                                     </CardContent>
-                                {/* </Card> */}
                             </Grid>
                         </Grid>
                 </Container>
                 <Container maxWidth='xxl'>
                     {noticeTable()}
                 </Container>
+                </div>
                 <Footer />
+                </div>
                 </>
     );
 }
