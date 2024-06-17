@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
         </Grid>
         <Grid item xs={12} md={6} lg={4} style={{textAlign:'center',padding:'20px'}}>
-        <form action="https://public.herotofu.com/v1/ab6ca490-1d5e-11ef-90b8-b52fc5a15495" method="post" accept-charset="UTF-8">
+        <form action="https://public.herotofu.com/v1/6c956040-2ce0-11ef-b435-b1ba21672864" method="post" accept-charset="UTF-8">
             <h2>Contact Us</h2>
                 <input name="Name" placeholder='Your name...' className="registerInput" id="name" type="text" required style={{marginBottom:'10px',width:'100%',height:'30px'}} /><br />
                 <input name="Email" placeholder='Your email...' className="registerInput" id="email" type="email" required style={{marginBottom:'10px',width:'100%',height:'30px'}}  />

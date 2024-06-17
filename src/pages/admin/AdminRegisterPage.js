@@ -10,7 +10,6 @@ import { LightPurpleButton } from '../../components/buttonStyles';
 import { registerUser } from '../../redux/userRelated/userHandle';
 import styled from 'styled-components';
 import Popup from '../../components/Popup';
-// import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
