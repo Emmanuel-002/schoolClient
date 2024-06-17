@@ -43,7 +43,6 @@ const Homepage = () => {
 
     const dispatch = useDispatch();
     const { list, loading, error, response } = useSelector((state) => state.homepage);
-    console.log(list);
 
     useEffect(() => {
         dispatch(getAllUsers());

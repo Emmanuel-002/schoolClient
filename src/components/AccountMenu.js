@@ -20,7 +20,7 @@ const AccountMenu = () => {
     return (
         <>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                <Tooltip title="Account settings">
+                <Tooltip title="Profile">
                     <IconButton
                         onClick={handleClick}
                         size="small"
@@ -59,12 +59,6 @@ const AccountMenu = () => {
                     </Link>
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <Settings fontSize="small" />
-                    </ListItemIcon>
-                    Settings
-                </MenuItem>
                 <MenuItem>
                     <ListItemIcon>
                         <Logout fontSize="small" />

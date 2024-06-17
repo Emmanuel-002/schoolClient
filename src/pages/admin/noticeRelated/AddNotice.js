@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addStuff } from '../../../redux/userRelated/userHandle';
 import { underControl } from '../../../redux/userRelated/userSlice';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, TextField } from '@mui/material';
 import Popup from '../../../components/Popup';
 
 const AddNotice = () => {
@@ -47,22 +47,30 @@ const AddNotice = () => {
         <form className="registerForm" onSubmit={submitHandler}>
           <span className="registerTitle">Add Notice</span>
           <label>Title</label>
-          <input className="registerInput" type="text" placeholder="Enter notice title..."
+          <TextField type="text" placeholder="Enter notice title..."
             value={title}
+            variant="outlined"
             onChange={(event) => setTitle(event.target.value)}
             required />
 
           <label>Details</label>
-          <input className="registerInput" type="text" placeholder="Enter notice details..."
+          <TextField
+            fullWidth
+            label="Write your message"
+            variant="outlined"
             value={details}
             onChange={(event) => setDetails(event.target.value)}
-            required />
+            required 
+            multiline
+            maxRows={4}
+          />
 
           <label>Date</label>
-          <input className="registerInput" type="date" placeholder="Enter notice date..."
+          <TextField type="date" placeholder="Enter notice date..."
             value={date}
+            variant="outlined"
             onChange={(event) => setDate(event.target.value)}
-            required />
+            required /><br />
 
           <button className="registerButton" type="submit" disabled={loader}>
             {loader ? (

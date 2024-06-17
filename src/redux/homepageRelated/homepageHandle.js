@@ -11,7 +11,6 @@ export const getAllUsers = () => async (dispatch) => {
     dispatch(getRequest());
     try {
         const result = await axios.get(`${process.env.REACT_APP_BASE_URL}`);
-        console.log(result)
 
         if (result.data.message) {
             dispatch(getFailed(result.data.message));
