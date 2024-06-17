@@ -131,7 +131,7 @@ const ClassDetails = () => {
 
     const studentRows = sclassStudents.map((student) => {
         return {
-            name: `${student.firstName} ${student.middleName} ${student.lastName}`,
+            name: `${student.firstname} ${student.middlename} ${student.lastname}`,
             rollNum: student.rollNum,
             id: student._id,
         };

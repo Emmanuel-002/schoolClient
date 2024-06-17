@@ -39,7 +39,7 @@ const TeacherDetails = () => {
                         Title: {teacherDetails?.gender==='Male' ? 'Mr' : 'Mrs' }
                     </Typography>
                     <Typography variant="h6" gutterBottom>
-                        Teacher Name: {teacherDetails?.fullName}
+                        Teacher Name: {teacherDetails?.fullname}
                     </Typography>
                     <Typography variant="h6" gutterBottom>
                         Gender: {teacherDetails?.gender}

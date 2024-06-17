@@ -6,12 +6,13 @@ import CustomPieChart from '../../components/CustomPieChart';
 import { getUserDetails } from '../../redux/userRelated/userHandle';
 import styled from 'styled-components';
 import CountUp from 'react-countup';
-import Subject from "../../assets/subjects.svg";
-import Assignment from "../../assets/assignment.svg";
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import { getSubjectList } from '../../redux/sclassRelated/sclassHandle';
 import { getAllUsers } from "../../redux/homepageRelated/homepageHandle";
 import TableViewTemplate from '../../components/TableViewTemplate';
 import Footer from '../../components/Footer';
+import SeeNotice from '../../components/SeeNotice';
 
 const StudentHomePage = () => {
     const dispatch = useDispatch();
@@ -94,7 +95,7 @@ const StudentHomePage = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Subject} alt="Subjects" />
+                        <SubtitlesIcon color="primary"  style={{fontSize:'5rem'}} />
                             <Title>
                                 Total Subjects
                             </Title>
@@ -103,7 +104,7 @@ const StudentHomePage = () => {
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Assignment} alt="Assignments" />
+                            <AssignmentIcon color="primary"  style={{fontSize:'5rem'}} />
                             <Title>
                                 Total Assignments
                             </Title>
@@ -139,9 +140,9 @@ const StudentHomePage = () => {
                         </ChartContainer>
                     </Grid>
                     <Grid item xs={12}>
-                    <Container maxWidth='xxl'>
-                            {noticeTable()}
-                        </Container>
+                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                            <SeeNotice />
+                        </Paper>
                     </Grid>
                 </Grid>
             </Container>

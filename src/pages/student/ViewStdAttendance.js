@@ -151,7 +151,7 @@ const ViewStdAttendance = () => {
         <>
             {loading
                 ? (
-                    <div>Loading...</div>
+                    <div>Please Wait...</div>
                 )
                 :
                 <div>

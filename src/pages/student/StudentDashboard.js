@@ -82,7 +82,7 @@ const StudentDashboard = () => {
                         <Route path="/Student/subjects" element={<StudentSubjects />} />
                         <Route path="/Student/attendance" element={<ViewStdAttendance />} />
                         <Route path="/Student/sendmessage" element={<SendMessage />} />
-                        <Route path="/Student/messages" element={<SeeMessages />} />
+                        <Route path="/Student/seemessages" element={<SeeMessages />} />
                         <Route path="/Message/:id" element={<ViewMessage />} />
                         <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 

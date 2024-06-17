@@ -21,7 +21,7 @@ const AddTeacher = () => {
     dispatch(getSubjectDetails(subjectID, "Subject"));
   }, [dispatch, subjectID]);
 
-  const [fullName, setFullName] = useState('');
+  const [fullname, setFullname] = useState('');
   const [gender, setGender] = useState('');
   const [employmentStatus, setEmploymentStatus] = useState('');
   const [email, setEmail] = useState('');
@@ -36,7 +36,7 @@ const AddTeacher = () => {
   const teachSubject = subjectDetails && subjectDetails._id
   const teachSclass = subjectDetails && subjectDetails.sclassName && subjectDetails.sclassName._id
 
-  const fields = { fullName, gender, employmentStatus, email, password, role, school, teachSubject, teachSclass }
+  const fields = { fullname, gender, employmentStatus, email, password, role, school, teachSubject, teachSclass }
 
   const changeStatusHandler = (event) => {
     if (event.target.value === 'Select Status') {
@@ -89,8 +89,8 @@ const changeGenderHandler = (event) => {
           </label>
           <label>Full Name</label>
           <input className="registerInput" type="text" placeholder="Enter teacher's full name..."
-            value={fullName}
-            onChange={(event) => setFullName(event.target.value)}
+            value={fullname}
+            onChange={(event) => setFullname(event.target.value)}
             autoComplete="name" required />
 
           <label>Gender</label>

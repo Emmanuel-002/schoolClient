@@ -21,14 +21,14 @@ const StudentProfile = () => {
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center">
                 <Avatar alt="Student Avatar" sx={{ width: 150, height: 150 }}>
-                  {String(currentUser.firstName).charAt(0)}
+                  {String(currentUser.firstname).charAt(0)}
                 </Avatar>
               </Box>
             </Grid>
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center">
                 <Typography variant="h5" component="h2" textAlign="center">
-                  {currentUser.firstName}  {currentUser.middleName}  {currentUser.lastName}
+                  {currentUser.firstname}  {currentUser.middlename}  {currentUser.lastname}
                 </Typography>
               </Box>
             </Grid>

@@ -46,7 +46,7 @@ const AdminProfile = () => {
 
     return (
         <div>
-            Name: {currentUser.name}
+            Name: {currentUser.fullname}
             <br />
             Email: {currentUser.email}
             <br />

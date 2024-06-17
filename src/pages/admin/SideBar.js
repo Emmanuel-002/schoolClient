@@ -6,12 +6,13 @@ import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
+import ReportIcon from "@mui/icons-material/Report"
+import EmailIcon from "@mui/icons-material/Email"
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
-import ReportIcon from '@mui/icons-material/Report';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom"
+import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 
 const SideBar = () => {
     const location = useLocation();
@@ -32,7 +33,7 @@ const SideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/subjects">
                     <ListItemIcon>
-                        <AssignmentIcon color={location.pathname.startsWith("/Admin/subjects") ? 'primary' : 'inherit'} />
+                        <SubtitlesIcon color={location.pathname.startsWith("/Admin/subjects") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Subjects" />
                 </ListItemButton>
@@ -54,15 +55,21 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Parents" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Admin/notices">
+                <ListItemButton component={Link} to="/Admin/addnotice">
                     <ListItemIcon>
-                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Admin/notices") ? 'primary' : 'inherit'} />
+                        <ReportIcon color={location.pathname.startsWith("/Admin/addnotice") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
-                    <ListItemText primary="Notices" />
+                    <ListItemText primary="Notice" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Admin/messages">
+                <ListItemButton component={Link} to="/Admin/sendmessage">
                     <ListItemIcon>
-                        <ReportIcon color={location.pathname.startsWith("/Admin/messages") ? 'primary' : 'inherit'} />
+                        <EmailIcon color={location.pathname.startsWith("/Admin/sendmessage") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Message" />
+                </ListItemButton>
+                <ListItemButton component={Link} to="/Admin/seemessages">
+                    <ListItemIcon>
+                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Admin/seemessages") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Messages" />
                 </ListItemButton>

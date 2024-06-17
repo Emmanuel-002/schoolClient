@@ -14,7 +14,7 @@ const AddParent = (situation) => {
   const userState = useSelector(state => state.user);
   const { status, currentUser, response, error } = userState;
 
-  const [name, setName] = useState('');
+  const [fullname, setFullname] = useState('');
   const [occupation, setOccupation] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -29,7 +29,7 @@ const AddParent = (situation) => {
   const role = "Parent"
   const attendance = []
 
-  const fields = { name, occupation, email, phone, address, password, adminID, role, attendance }
+  const fields = { fullname, occupation, email, phone, address, password, adminID, role, attendance }
 
   const submitHandler = (event) => {
     event.preventDefault()
@@ -62,8 +62,8 @@ const AddParent = (situation) => {
 
           <label>Name</label>
           <input className="registerInput" type="text" placeholder="Enter parent's name..."
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={fullname}
+            onChange={(event) => setFullname(event.target.value)}
             autoComplete="name" required />
 
           <label>Occupation</label>

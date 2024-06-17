@@ -30,10 +30,10 @@ const AccountMenu = () => {
                         aria-expanded={open ? 'true' : undefined}
                     >
                         <Avatar sx={{ width: 32, height: 32 }}>
-                            {String(currentUser.role === 'Student' ? currentUser.firstName :
-                                    currentUser.role === 'Teacher' ? currentUser.fullName :
-                                    currentUser.role === 'Admin' ? currentUser.name : 
-                                    currentUser.role === 'Parent' ? currentUser.name : 
+                            {String(currentUser.role === 'Student' ? currentUser.firstname :
+                                    currentUser.role === 'Teacher' ? currentUser.fullname :
+                                    currentUser.role === 'Admin' ? currentUser.fullname : 
+                                    currentUser.role === 'Parent' ? currentUser.fullname : 
                                     'U').charAt(0)}
                         </Avatar>
                     </IconButton>

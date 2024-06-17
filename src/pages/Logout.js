@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { authLogout } from '../redux/userRelated/userSlice';
 import styled from 'styled-components';
 
 const Logout = () => {
-    const currentUser = useSelector(state => state.user.currentUser);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -21,7 +20,6 @@ const Logout = () => {
 
     return (
         <LogoutContainer>
-            <h1>{currentUser.name}</h1>
             <LogoutMessage>Are you sure you want to log out?</LogoutMessage>
             <LogoutButtonLogout onClick={handleLogout}>Log Out</LogoutButtonLogout>
             <LogoutButtonCancel onClick={handleCancel}>Cancel</LogoutButtonCancel>
@@ -40,8 +38,8 @@ const LogoutContainer = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #2c2c2c;
-  color: whitesmoke;
+  background-color: #whitesmoke;
+  color: #2c2c2c;
 `;
 
 const LogoutMessage = styled.p`

@@ -16,9 +16,9 @@ const UpdateStudent = ({ situation }) => {
     const { userDetails, currentUser, loading, error } = useSelector((state) => state.user);
     const { sclassesList } = useSelector((state) => state.sclass);
 
-    const [firstName, setFirstName] = useState('');
-    const [middleName, setMiddleName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [middlename, setMiddlename] = useState('');
+    const [lastname, setLastname] = useState('');
     const [dob, setDob] = useState('');
     const [gender, setGender] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
@@ -36,9 +36,9 @@ const UpdateStudent = ({ situation }) => {
 
     useEffect(() => {
         if (userDetails) {
-            setFirstName(userDetails.firstName || '');
-            setMiddleName(userDetails.middleName || '');
-            setLastName(userDetails.lastName || '');
+            setFirstname(userDetails.firstname || '');
+            setMiddlename(userDetails.middlename || '');
+            setLastname(userDetails.lastname || '');
             setDob(userDetails.dob || '');
             setGender(userDetails.gender || '');
             setPhoneNo(userDetails.phoneNo || '');
@@ -107,7 +107,7 @@ const UpdateStudent = ({ situation }) => {
         }
     }
 
-    const fields = { firstName, middleName, lastName, dob, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address, school, parent, role, examResult, attendance }
+    const fields = { firstname, middlename, lastname, dob, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address, school, parent, role, examResult, attendance }
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -138,21 +138,21 @@ const UpdateStudent = ({ situation }) => {
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>First Name</label>
                         <input type="text" className="registerInput" placeholder="Enter first name..."
-                        value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
+                        value={firstname}
+                        onChange={(event) => setFirstname(event.target.value)}
                         autoComplete="name" required />
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>Middle Name</label>
                         <input className="registerInput" type="text" placeholder="Enter middle name..."
-                        value={middleName}
-                        onChange={(event) => setMiddleName(event.target.value)}/>
+                        value={middlename}
+                        onChange={(event) => setMiddlename(event.target.value)}/>
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>Last Name</label>
                         <input className="registerInput" type="text" placeholder="Enter last name..."
-                        value={lastName}
-                        onChange={(event) => setLastName(event.target.value)}
+                        value={lastname}
+                        onChange={(event) => setLastname(event.target.value)}
                         required />
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>

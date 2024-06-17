@@ -59,7 +59,7 @@ const ShowStudents = () => {
 
     const studentRows = studentsList && studentsList.length > 0 && studentsList.map((student) => {
         return {
-            fullName: `${student.firstName} ${student.middleName} ${student.lastName}`,
+            fullName: `${student.firstname} ${student.middlename} ${student.lastname}`,
             rollNum: student.rollNum,
             sclassName: student.sclassName.sclassName,
             id: student._id,

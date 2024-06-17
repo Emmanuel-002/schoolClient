@@ -107,7 +107,7 @@ const AdminDashboard = () => {
                         <Route path="/Admin/profile" element={<AdminProfile />} />
                         <Route path="/Admin/messages" element={<SeeMessages />} />
                         <Route path="/Admin/sendmessage" element={<SendMessage />} />
-                        <Route path="/Admin/messages" element={<SeeMessages />} />
+                        <Route path="/Admin/seemessages" element={<SeeMessages />} />
                         <Route path="/Message/:id" element={<ViewMessage />} />
                         <Route path="/Message/reply/:id" element={<ReplyMessage />} />
 

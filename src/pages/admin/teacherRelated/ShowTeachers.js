@@ -45,10 +45,10 @@ const ShowTeachers = () => {
     }
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        // console.log(deleteID);
+        // console.log(address);
+        // setMessage("Sorry the delete function has been disabled for now.")
+        // setShowPopup(true)
 
         dispatch(deleteUser(deleteID, address)).then(() => {
             dispatch(getAllTeachers(currentUser._id));
@@ -57,14 +57,14 @@ const ShowTeachers = () => {
 
     const columns = [
         // { id: 'title', label: 'Title', minWidth: 170 },
-        { id: 'fullName', label: 'Full Name', minWidth: 170 },
+        { id: 'fullname', label: 'Full Name', minWidth: 170 },
         { id: 'teachSubject', label: 'Subject', minWidth: 100 },
         { id: 'teachSclass', label: 'Class', minWidth: 170 },
     ];
 
     const rows = teachersList.map((teacher) => {
         return {
-            fullName: teacher.fullName,
+            fullname: teacher.fullname,
             // gender: teacher.gender,
             // employmentStatus: teacher.employmentStatus,
             teachSubject: teacher.teachSubject?.subName || null,

@@ -44,13 +44,17 @@ const ViewSubject = () => {
 
   const studentColumns = [
     { id: 'rollNum', label: 'Roll No.', minWidth: 100 },
-    { id: 'name', label: 'Name', minWidth: 170 },
+    { id: 'firstname', label: 'First Name', minWidth: 170 },
+    { id: 'middlename', label: 'Middle Name', minWidth: 170 },
+    { id: 'lastname', label: 'Last Name', minWidth: 170 },
   ]
 
   const studentRows = sclassStudents.map((student) => {
     return {
       rollNum: student.rollNum,
-      name: student.name,
+      firstname:  student.firstname,
+      middlename:  student.middlename,
+      lastname:  student.lastname,
       id: student._id,
     };
   })
@@ -112,14 +116,12 @@ const ViewSubject = () => {
             <Typography variant="h5" gutterBottom>
               Students List:
             </Typography>
-
             {selectedSection === 'attendance' &&
               <TableTemplate buttonHaver={StudentsAttendanceButtonHaver} columns={studentColumns} rows={studentRows} />
             }
             {selectedSection === 'marks' &&
               <TableTemplate buttonHaver={StudentsMarksButtonHaver} columns={studentColumns} rows={studentRows} />
             }
-
             <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
               <BottomNavigation value={selectedSection} onChange={handleSectionChange} showLabels>
                 <BottomNavigationAction
@@ -166,7 +168,7 @@ const ViewSubject = () => {
         </Typography>
         {subjectDetails && subjectDetails.teacher ?
           <Typography variant="h6" gutterBottom>
-            Teacher Name : {subjectDetails.teacher.name}
+            Teacher Name : {subjectDetails.teacher.fullname}
           </Typography>
           :
           <GreenButton variant="contained"

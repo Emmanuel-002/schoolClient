@@ -27,7 +27,7 @@ const ShowParentStudents = (props) => {
 
     const studentRows = props && props.length > 0 && props.map((student) => {
         return {
-            fullName: `${student.firstName} ${student.middleName} ${student.lastName}`,
+            fullName: `${student.firstname} ${student.middlename} ${student.lastname}`,
             rollNum: student.rollNum,
             id: student._id,
         };

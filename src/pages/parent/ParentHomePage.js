@@ -76,9 +76,9 @@ const ParentHomePage = () => {
                         </Paper>
                     </Grid>
                     <Grid item xs={12}>
-                        <Container maxWidth='xxl'>
-                            {noticeTable()}
-                        </Container>
+                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                            <SeeNotice />
+                        </Paper>
                     </Grid>
                 </Grid>
             </Container>

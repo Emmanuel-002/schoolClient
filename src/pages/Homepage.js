@@ -68,16 +68,19 @@ const Homepage = () => {
         });
         return (
             <div style={{ marginTop: '50px', marginRight: '20px' }}>
+                <h4 style={{ fontSize: '30px', marginBottom: '40px' }}>Notices</h4>
                 {loading ? (
                     <div style={{ fontSize: '20px' }}>Please Wait...</div>
                 ) : response ? (
                     <div style={{ fontSize: '20px' }}>No Notices to Show Right Now</div>
-                ) : (
+                ) :  (
                     <>
-                        <h3 style={{ fontSize: '30px', marginBottom: '40px' }}>School News & Updates</h3>
                         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                             {Array.isArray(list?.notices) && list?.notices.length > 0 &&
                                 <TableViewTemplate columns={noticeColumns} rows={noticeRows} />
+                            }
+                            {Array.isArray(list?.notices) && list?.notices.length === 0 &&
+                                <div>No Notices to Show Right Now</div>
                             }
                         </Paper>
                     </>
@@ -91,7 +94,7 @@ const Homepage = () => {
         if(loading){
             return(
                 <Typography style={{marginTop:'2rem'}}>
-                    Please Wait
+                    Please Wait...
                 </Typography>
             )
         }else if(error){
@@ -256,7 +259,7 @@ const Homepage = () => {
                         </Grid>
                 </Container>
                 <Container maxWidth='xxl'>
-                    {noticeTable()}
+                        {noticeTable()}
                 </Container>
                 </div>
                 <Footer />

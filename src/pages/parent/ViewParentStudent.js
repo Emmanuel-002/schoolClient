@@ -46,7 +46,7 @@ const ViewParentStudent = () => {
     if (response) { console.log(response) }
     else if (error) { console.log(error) }
 
-    const [name, setName] = useState('');
+    const [firstname, setFirstname] = useState('');
     const [rollNum, setRollNum] = useState('');
     const [password, setPassword] = useState('');
     const [sclassName, setSclassName] = useState('');
@@ -78,12 +78,12 @@ const ViewParentStudent = () => {
     };
 
     const fields = password === ""
-        ? { name, rollNum }
-        : { name, rollNum, password }
+        ? { firstname, rollNum }
+        : { firstname, rollNum, password }
 
     useEffect(() => {
         if (userDetails) {
-            setName(userDetails.name || '');
+            setFirstname(userDetails.firstname || '');
             setRollNum(userDetails.rollNum || '');
             setSclassName(userDetails.sclassName || '');
             setStudentSchool(userDetails.school || '');
@@ -259,7 +259,7 @@ const ViewParentStudent = () => {
                         </Paper>
                     </>
                     :
-                    <div>Please be informed that {name} does not have any record of attendance.</div>
+                    <div>Please be informed that {firstname} does not have any record of attendance.</div>
                 }
             </>
         )
@@ -272,7 +272,7 @@ const ViewParentStudent = () => {
                     <div ref={componentRef}>
                     <h3>Statement of Result</h3>
                     <p>Roll Number: {`${userDetails.rollNum}`}</p>
-                    <p>Name: {`${userDetails.firstName} ${userDetails.middleName} ${userDetails.lastName}`}</p>
+                    <p>Name: {`${userDetails.firstname} ${userDetails.middlename} ${userDetails.lastname}`}</p>
                     <Table>
                         <TableHead>
                             <StyledTableRow>
@@ -363,7 +363,7 @@ const ViewParentStudent = () => {
                         </Paper>
                     </>
                     :
-                    <div>Please be informed that {name} does not have any mark recorded.</div>
+                    <div>Please be informed that {firstname} does not have any mark recorded.</div>
                 }
             </>
         )
@@ -372,11 +372,11 @@ const ViewParentStudent = () => {
     const StudentDetailsSection = () => {
         return (
             <div>
-                First Name: {userDetails.firstName}
+                First Name: {userDetails.firstname}
                 <br />
-                Middle Name: {userDetails.middleName}
+                Middle Name: {userDetails.middlename}
                 <br />
-                Last Name: {userDetails.lastName}
+                Last Name: {userDetails.lastname}
                 <br />
                 Date of Birth: {userDetails.dob}
                 <br />

@@ -1,10 +1,9 @@
 import { Container, Grid, Paper } from '@mui/material'
 import SeeNotice from '../../components/SeeNotice';
-import Students from "../../assets/img1.png";
-import Classes from "../../assets/img2.png";
-import Teachers from "../../assets/img3.png";
-import Parents from "../../assets/img3.png";
-import Fees from "../../assets/img4.png";
+import PersonIcon from "@mui/icons-material/Person";
+import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
+import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
+import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom"
 import styled from 'styled-components';
 import CountUp from 'react-countup';
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,52 +39,44 @@ const AdminHomePage = () => {
     const numberOfParents = parentsList && parentsList.length;
 
     return (
-        <>
+        <div style={{minHeight:'100vh',display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'space-between'}}>
+            <div>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} md={2.4} lg={2.4}>
+                    <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Students} alt="Students" />
+                            <PersonIcon color='primary' style={{fontSize:'5rem'}} />
                             <Title>
                                 Total Students
                             </Title>
                             <Data start={0} end={numberOfStudents} duration={3} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={2.4} lg={2.4}>
+                    <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Classes} alt="Classes" />
+                           <ClassOutlinedIcon color='primary' style={{fontSize:'5rem'}}  />
                             <Title>
                                 Total Classes
                             </Title>
                             <Data start={0} end={numberOfClasses} duration={3} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={2.4} lg={2.4}>
+                    <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Teachers} alt="Teachers" />
+                           <SupervisorAccountOutlinedIcon color='primary' style={{fontSize:'5rem'}} />
                             <Title>
                                 Total Teachers
                             </Title>
                             <Data start={0} end={numberOfTeachers} duration={3} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={2.4} lg={2.4}>
+                    <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Parents} alt="Parents" />
+                            <FamilyRestroomIcon color='primary' style={{fontSize:'5rem'}} />
                             <Title>
                                 Total Parents
                             </Title>
                             <Data start={0} end={numberOfParents} duration={3} />
-                        </StyledPaper>
-                    </Grid>
-                    <Grid item xs={12} md={2.4} lg={2.4}>
-                        <StyledPaper>
-                            <img src={Fees} alt="Fees" />
-                            <Title>
-                                Fees Collection
-                            </Title>
-                            <Data start={0} end={990000000} duration={3} prefix="&#8358;" />                        
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12}>
@@ -95,8 +86,9 @@ const AdminHomePage = () => {
                     </Grid>
                 </Grid>
             </Container>
+            </div>
             <Footer />
-        </>
+        </div>
     );
 };
 

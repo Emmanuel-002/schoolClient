@@ -115,7 +115,7 @@ const StudentAttendance = ({ situation }) => {
                         >
                             <Stack spacing={1} sx={{ mb: 3 }}>
                                 <Typography variant="h4">
-                                    Student Name: {`${userDetails.firstName} ${userDetails.middleName} ${userDetails.lastName}`}
+                                    Student Name: {`${userDetails.firstname} ${userDetails.middlename} ${userDetails.lastname}`}
                                 </Typography>
                                 {currentUser.teachSubject &&
                                     <Typography variant="h4">

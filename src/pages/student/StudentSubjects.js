@@ -55,7 +55,7 @@ const StudentSubjects = () => {
                 <div ref={componentRef}>
                     <h3>Statement of Result</h3>
                     <p>Roll Number: {`${userDetails.rollNum}`}</p>
-                    <p>Name: {`${userDetails.firstName} ${userDetails.middleName} ${userDetails.lastName}`}</p>
+                    <p>Name: {`${userDetails.firstname} ${userDetails.middlename} ${userDetails.lastname}`}</p>
                     <Table>
                         <TableHead>
                             <StyledTableRow>

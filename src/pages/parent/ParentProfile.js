@@ -20,14 +20,14 @@ const ParentProfile = () => {
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center">
                 <Avatar alt="Student Avatar" sx={{ width: 150, height: 150 }}>
-                  {String(currentUser.name).charAt(0)}
+                  {String(currentUser.fullname).charAt(0)}
                 </Avatar>
               </Box>
             </Grid>
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center">
                 <Typography variant="h5" component="h2" textAlign="center">
-                  {currentUser.name}
+                  {currentUser.fullname}
                 </Typography>
               </Box>
             </Grid>

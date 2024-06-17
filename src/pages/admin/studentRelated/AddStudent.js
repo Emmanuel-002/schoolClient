@@ -16,9 +16,9 @@ const AddStudent = ({ situation }) => {
     const { status, currentUser, response, error } = userState;
     const { sclassesList } = useSelector((state) => state.sclass);
 
-    const [firstName, setFirstName] = useState('');
-    const [middleName, setMiddleName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [middlename, setMiddlename] = useState('');
+    const [lastname, setLastname] = useState('');
     const [gender, setGender] = useState('');
     const [dob, setDob] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
@@ -77,11 +77,11 @@ const AddStudent = ({ situation }) => {
         }
     }
 
-    const fields = { firstName, middleName, lastName, dob, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address, adminID, role, attendance }
+    const fields = { firstname, middlename, lastname, dob, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address, adminID, role, attendance }
 
     const submitHandler = (event) => {
         event.preventDefault();
-        if (firstName === "gender") {
+        if (gender === "") {
             setMessage("Please select a gender");
             setShowPopup(true);
         }
@@ -91,10 +91,6 @@ const AddStudent = ({ situation }) => {
         }
         else if (enrolmentStatus === "") {
             setMessage("Please select an enrolment status");
-            setShowPopup(true);
-        }
-        else if (sclassName === "") {
-            setMessage("Please select a classname");
             setShowPopup(true);
         }
         else {
@@ -128,21 +124,21 @@ const AddStudent = ({ situation }) => {
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>First Name</label>
                         <input type="text" className="registerInput" placeholder="Enter first name..."
-                        value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
+                        value={firstname}
+                        onChange={(event) => setFirstname(event.target.value)}
                         autoComplete="name" required />
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>Middle Name</label>
                         <input className="registerInput" type="text" placeholder="Enter middle name..."
-                        value={middleName}
-                        onChange={(event) => setMiddleName(event.target.value)}/>
+                        value={middlename}
+                        onChange={(event) => setMiddlename(event.target.value)}/>
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>Last Name</label>
                         <input className="registerInput" type="text" placeholder="Enter last name..."
-                        value={lastName}
-                        onChange={(event) => setLastName(event.target.value)}
+                        value={lastname}
+                        onChange={(event) => setLastname(event.target.value)}
                         required />
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
@@ -158,9 +154,9 @@ const AddStudent = ({ situation }) => {
                             className="registerInput"
                             value={gender}
                             onChange={changeGenderHandler} required>
-                            <option value='Select Gender'>Select Gender</option>
-                            <option key='male' value='Male'>Male</option>
-                            <option key='female' value='Female'>Female</option>
+                            <option value="">Select Gender</option>
+                            <option key='male' value="Male">Male</option>
+                            <option key='female' value="Female">Female</option>
                         </select>
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
@@ -186,7 +182,7 @@ const AddStudent = ({ situation }) => {
                                 className="registerInput"
                                 value={className}
                                 onChange={changeClassHandler} required>
-                                <option value='Select Class'>Select Class</option>
+                                <option value="">Select Class</option>
                                 {sclassesList.map((classItem, index) => (
                                     <option key={index} value={classItem.sclassName}>
                                         {classItem.sclassName}
@@ -202,7 +198,7 @@ const AddStudent = ({ situation }) => {
                             className="registerInput"
                             value={enrolmentStatus}
                             onChange={changeStatusHandler} required>
-                            <option value='Select Gender'>Select Status</option>
+                            <option value="">Select Status</option>
                             <option key='day' value='Day'>Day</option>
                             <option key='boarding' value='Boarding'>Boarding</option>
                         </select>

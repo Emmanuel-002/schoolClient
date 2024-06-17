@@ -57,7 +57,7 @@ const ShowParents = () => {
 
     const rows = parentsList.map((parent) => {
         return {
-            name: parent.name,
+            name: parent.fullname,
             id: parent._id,
         };
     });

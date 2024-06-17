@@ -49,9 +49,9 @@ const ViewStudent = () => {
         dispatch(getAllSclasses(adminID, "Sclass"));
     }, [adminID, dispatch]);
 
-    const [firstName, setFirstName] = useState('');
-    const [middleName, setMiddleName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [middlename, setMiddlename] = useState('');
+    const [lastname, setLastname] = useState('');
     const [gender, setGender] = useState('');
     const [age, setAge] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
@@ -91,14 +91,14 @@ const ViewStudent = () => {
     };
 
     const fields = password === ""
-        ? { firstName, middleName, lastName, age, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, address }
-        : { firstName, middleName, lastName, age, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address }
+        ? { firstname, middlename, lastname, age, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, address }
+        : { firstname, middlename, lastname, age, gender, phoneNo, email, sclassName, enrolmentStatus, rollNum, password, address }
 
     useEffect(() => {
         if (userDetails) {
-            setFirstName(userDetails.firstName || '');
-            setMiddleName(userDetails.middleName || '');
-            setLastName(userDetails.lastName || '');
+            setFirstname(userDetails.firstname || '');
+            setMiddlename(userDetails.middlename || '');
+            setLastname(userDetails.lastname || '');
             setGender(userDetails.gender || '');
             setAge(userDetails.age || '');
             setPhoneNo(userDetails.phoneNo || '');
@@ -290,7 +290,7 @@ const ViewStudent = () => {
                     <div ref={componentRef}>
                     <h3>Statement of Result</h3>
                     <p>Roll Number: {`${userDetails.rollNum}`}</p>
-                    <p>Name: {`${userDetails.firstName} ${userDetails.middleName} ${userDetails.lastName}`}</p>
+                    <p>Name: {`${userDetails.firstname} ${userDetails.middlename} ${userDetails.lastname}`}</p>
                     <Table>
                         <TableHead>
                             <StyledTableRow>
@@ -394,11 +394,11 @@ const ViewStudent = () => {
     const StudentDetailsSection = () => {
         return (
             <div>
-                First Name: {userDetails.firstName}
+                First Name: {userDetails.firstname}
                 <br />
-                Middle Name: {userDetails.middleName}
+                Middle Name: {userDetails.middlename}
                 <br />
-                Last Name: {userDetails.lastName}
+                Last Name: {userDetails.lastname}
                 <br />
                 Date of Birth: {userDetails.dob}
                 <br />

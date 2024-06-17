@@ -37,7 +37,7 @@ const ParentDetails = () => {
                         Parent Details
                     </Typography>
                     <Typography variant="h6" gutterBottom>
-                        Full Name - {parentDetails?.name}
+                        Full Name - {parentDetails?.fullname}
                     </Typography>
                     <Typography variant="h6" gutterBottom>
                         Occupation - {parentDetails?.occupation}

@@ -64,11 +64,15 @@ const TeacherViewStudent = () => {
             {loading
                 ?
                 <>
-                    <div>Loading...</div>
+                    <div>Please Wait...</div>
                 </>
                 :
                 <div>
-                    Name: {userDetails.name}
+                    First Name: {userDetails.firstname}
+                    <br />
+                    Middle Name: {userDetails.middlename}
+                    <br />
+                    Last Name: {userDetails.lastname}
                     <br />
                     Roll Number: {userDetails.rollNum}
                     <br />

@@ -26,13 +26,17 @@ const TeacherClassDetails = () => {
     }
 
     const studentColumns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
+        { id: 'firstname', label: 'First Name', minWidth: 170 },
+        { id: 'middlename', label: 'Middle Name', minWidth: 170 },
+        { id: 'lastname', label: 'Last Name', minWidth: 170 },
         { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
     ]
 
     const studentRows = sclassStudents.map((student) => {
         return {
-            name: student.name,
+            firstname: student.firstname,
+            middlename: student.middlename,
+            lastname: student.lastname,
             rollNum: student.rollNum,
             id: student._id,
         };
@@ -146,7 +150,7 @@ const TeacherClassDetails = () => {
     return (
         <>
             {loading ? (
-                <div>Loading...</div>
+                <div>Please Wait...</div>
             ) : (
                 <>
                     <Typography variant="h4" align="center" gutterBottom>

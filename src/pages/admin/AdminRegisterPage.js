@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress, Button} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from "../../assets/designlogin.jpg"
+import bgpic from "../../assets/students.png"
 import { LightPurpleButton } from '../../components/buttonStyles';
 import { registerUser } from '../../redux/userRelated/userHandle';
 import styled from 'styled-components';
@@ -35,20 +35,20 @@ const AdminRegisterPage = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const name = event.target.adminName.value;
+        const fullname = event.target.adminName.value;
         const schoolName = event.target.schoolName.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        if (!name || !schoolName || !email || !password) {
-            if (!name) setAdminNameError(true);
+        if (!fullname || !schoolName || !email || !password) {
+            if (!fullname) setAdminNameError(true);
             if (!schoolName) setSchoolNameError(true);
             if (!email) setEmailError(true);
             if (!password) setPasswordError(true);
             return;
         }
 
-        const fields = { name, email, password, role, schoolName }
+        const fields = { fullname, email, password, role, schoolName }
         setLoader(true)
         dispatch(registerUser(fields, role))
     };
