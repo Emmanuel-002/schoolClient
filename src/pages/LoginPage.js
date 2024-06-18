@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress, Backdrop } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from "../assets/students.png"
+import bgpic from "../assets/designlogin.png"
 import { LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
@@ -101,7 +101,7 @@ const LoginPage = ({ role }) => {
         <ThemeProvider theme={defaultTheme}>
             <Grid container component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
-                <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+                <Grid item xs={12} sm={12} md={12} lg={5} component={Paper} elevation={6} square>
                     <Box
                         sx={{
                             my: 8,
@@ -221,8 +221,9 @@ const LoginPage = ({ role }) => {
                 <Grid
                     item
                     xs={false}
-                    sm={4}
-                    md={7}
+                    sm={false}
+                    md={false}
+                    lg={7}
                     sx={{
                         backgroundImage: `url(${bgpic})`,
                         backgroundRepeat: 'no-repeat',

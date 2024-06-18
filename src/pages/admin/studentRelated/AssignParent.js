@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getUserDetails } from '../../../redux/userRelated/userHandle';
 import {getAllParents} from '../../../redux/parentRelated/parentHandle';
 import { updateStudentFields } from '../../../redux/studentRelated/studentHandle';
@@ -16,6 +16,7 @@ import Popup from '../../../components/Popup';
 
 const AssignParent = ({ situation }) => {
     const dispatch = useDispatch();
+    const navigate= useNavigate()
     const { currentUser, userDetails, loading } = useSelector((state) => state.user);
     const { parentsList } = useSelector((state) => state.parent);
     const { response, error, statestatus } = useSelector((state) => state.student);
@@ -46,9 +47,10 @@ const AssignParent = ({ situation }) => {
     const submitHandler = (event) => {
         event.preventDefault();
         setLoader(true);
-        dispatch(updateStudentFields(studentID, fields, "AssignParent"));
-        setName("");
-        setEmail("");
+        dispatch(updateStudentFields(studentID, fields, "AssignParent"))
+        .then(()=>{
+            navigate('/Admin/students')
+    })
     }
 
     useEffect(() => {

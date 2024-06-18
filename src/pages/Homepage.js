@@ -25,7 +25,7 @@ import HomepageSideBar from './HomepageSideBar';
 import Quotes from "./Quotes";
 import HomeNav from "../components/HomeNav";
 import { BorderColor } from "@mui/icons-material";
-import ambassador from '../assets/ambassador.jpg'
+import banner from '../assets/banner.png'
 import classroom from '../assets/classroom.jpeg'
 import laboratory from '../assets/laboratory.jpg'
 import hall from '../assets/hall.jpg'
@@ -174,40 +174,15 @@ const Homepage = () => {
                 </Box>
                 <div style={{minHeight:'100vh',display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'space-between'}}>
                 <div>
-                <Container maxWidth='xxl' style={{marginTop:'1rem'}}>
-                <Grid container>
-                            <Grid item xs={12} md={6} lg={6}>
-                                <Card style={{height:'20rem', borderRadius:'5px 0px 0px 5px'}}>
-                                    <CardHeader
-                                        title='Welcome To SchoolCool'
-                                    />
-                                    <CardContent>
-                                        <Typography>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                            Totam temporibus eligendi libero, repellat doloribus, consequatur ratione at, 
-                                            facilis ipsam architecto cupiditate corporis eaque ipsum asperiores veniam ut 
-                                            iusto sunt? Ad, blanditiis! Id doloribus mollitia corporis accusantium porro odio 
-                                            tempore optio voluptate deleniti velit laborum delectus in facilis fugit fugiat 
-                                            dolor alias magnam pariatur, ratione molestias tempora, quam harum. Voluptatibus 
-                                            non praesentium laudantium quo culpa animi explicabo doloribus libero dicta fugiat 
-                                            quod pariatur, autem aliquid deleniti unde necessitatibus sint numquam qui atque 
-                                            itaque! Possimus blanditiis, ab quo, laboriosam harum, repellendus esse quisquam
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                            <Grid item xs={12} md={6} lg={6} >
-                                <Card style={{height:'20rem', borderRadius:'0px 5px 5px 0px'}}>
+                <div>
+                {/* <Card style={{height:'20rem', borderRadius:'0px 5px 5px 0px'}}> */}
                                     <CardMedia
                                         component="img"
-                                        height="100%"
-                                        image={ambassador}
-                                        alt="Ambassador"
+                                        image={banner}
+                                        alt="Banner"
                                     />
-                                </Card>
-                            </Grid>
-                        </Grid>
-            </Container>
+                                {/* </Card> */}
+            </div>
             <Container maxWidth='xl' style={{marginTop:'1rem'}}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} lg={6}>

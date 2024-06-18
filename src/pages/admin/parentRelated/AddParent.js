@@ -29,7 +29,7 @@ const AddParent = (situation) => {
   const role = "Parent"
   const attendance = []
 
-  const fields = { fullname, occupation, email, phone, address, password, adminID, role, attendance }
+  const fields = { fullname, occupation, email, phone, address, password, role, adminID, attendance }
 
   const submitHandler = (event) => {
     event.preventDefault()
@@ -60,7 +60,7 @@ const AddParent = (situation) => {
         <form className="registerForm" onSubmit={submitHandler}>
           <span className="registerTitle">Add Parent</span>
 
-          <label>Name</label>
+          <label>Full Name</label>
           <input className="registerInput" type="text" placeholder="Enter parent's name..."
             value={fullname}
             onChange={(event) => setFullname(event.target.value)}

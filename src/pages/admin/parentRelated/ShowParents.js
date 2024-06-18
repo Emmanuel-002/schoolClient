@@ -47,7 +47,7 @@ const ShowParents = () => {
 
     const deleteHandler = (deleteID, address) => {
         dispatch(deleteUser(deleteID, address)).then(() => {
-            dispatch(getAllTeachers(currentUser._id));
+            dispatch(getAllParents(currentUser._id));
         });
     };
 
