@@ -16,7 +16,7 @@ import {
     CardActionArea,
 } from '@mui/material';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -26,6 +26,7 @@ import Quotes from "./Quotes";
 import HomeNav from "../components/HomeNav";
 import { BorderColor } from "@mui/icons-material";
 import banner from '../assets/banner.png'
+import logo from '../assets/schoolLogo.png'
 import classroom from '../assets/classroom.jpeg'
 import laboratory from '../assets/laboratory.jpg'
 import hall from '../assets/hall.jpg'
@@ -42,11 +43,16 @@ import Footer from "../components/Footer";
 const Homepage = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const { list, loading, error, response } = useSelector((state) => state.homepage);
 
     useEffect(() => {
         dispatch(getAllUsers());
     }, [dispatch]);
+    
+    const goToHome = () => {
+        navigate('/')
+    }
 
     const noticeTable = () => {
         const noticeColumns = [
@@ -158,30 +164,27 @@ const Homepage = () => {
                 <CssBaseline />
                 <Box style={{position:"sticky",top:0,zIndex:2,backgroundColor:"#7F00FF", color:'#fff'}}>
                     <Container maxWidth='xxl'>
-                    <Toolbar sx={{ pr: '24px' }}>
-                        <Typography
-                            component="h1"
-                            variant="h6"
-                            color="inherit"
-                            noWrap
-                            sx={{ flexGrow: 1 }}
-                        >
-                            SchoolCool
-                         </Typography>
-                        <HomeNav />
-                    </Toolbar>
+                    <div style={{display:'flex', justifyContent:'space-between'}}>
+                       <div style={{display:'flex',alignItems:'center'}} onClick={goToHome}>
+                       <img
+                            src={logo}
+                            height={'40px'}
+                            width={'40px'}
+                            style={{borderRadius:'50%'}}
+                        />
+                       </div>
+                         <HomeNav />
+                    </div>
                     </Container>
                 </Box>
                 <div style={{minHeight:'100vh',display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'space-between'}}>
                 <div>
                 <div>
-                {/* <Card style={{height:'20rem', borderRadius:'0px 5px 5px 0px'}}> */}
                                     <CardMedia
                                         component="img"
                                         image={banner}
                                         alt="Banner"
                                     />
-                                {/* </Card> */}
             </div>
             <Container maxWidth='xl' style={{marginTop:'1rem'}}>
                         <Grid container spacing={2}>
