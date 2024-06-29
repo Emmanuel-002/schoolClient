@@ -53,7 +53,6 @@ const ShowParentStudents = (props) => {
             navigate("/Admin/students/student/assignParent/" + row.id)
         }
         const handleAttendance = () => {
-            // navigate("/Student/attendance/" + row.id)
             navigate("/Admin/students/student/attendance/" + row.id)
         }
         const handleMarks = () => {

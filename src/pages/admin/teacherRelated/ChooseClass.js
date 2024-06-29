@@ -55,7 +55,7 @@ const ChooseClass = ({ situation }) => {
     return (
         <>
             {loading ?
-                <div>PLease Wait...</div>
+                <div>Please Wait...</div>
                 :
                 <>
                     {getresponse ?

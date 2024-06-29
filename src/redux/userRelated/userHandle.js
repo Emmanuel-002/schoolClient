@@ -21,7 +21,6 @@ export const loginUser = (fields, role) => async (dispatch) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.role) {
-            // console.log(result.data)
             dispatch(authSuccess(result.data));
         } else {
             dispatch(authFailed(result.data.message));
