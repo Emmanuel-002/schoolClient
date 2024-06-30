@@ -21,12 +21,6 @@ const ParentDetails = () => {
         console.log(error);
     }
 
-    // const isSubjectNamePresent = teacherDetails?.teachSubject?.subName;
-
-    // const handleAddSubject = () => {
-    //     navigate(`/Admin/teachers/choosesubject/${teacherDetails?.teachSclass?._id}/${teacherDetails?._id}`);
-    // };
-
     return (
         <>
             {loading ? (

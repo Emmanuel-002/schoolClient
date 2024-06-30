@@ -62,7 +62,6 @@ const AddNotice = () => {
             onChange={(event) => setDetails(event.target.value)}
             required 
             multiline
-            maxRows={4}
           />
 
           <label>Date</label>

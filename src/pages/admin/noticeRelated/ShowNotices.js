@@ -35,9 +35,9 @@ const ShowNotices = () => {
     }
 
     const noticeColumns = [
-        { id: 'title', label: 'Title', minWidth: 170 },
-        { id: 'details', label: 'Details', minWidth: 100 },
-        { id: 'date', label: 'Date', minWidth: 170 },
+        { id: 'title', label: 'Title', maxWidth: 100 },
+        { id: 'details', label: 'Details', minWidth: 250 },
+        { id: 'date', label: 'Date', maxWidth: 100 },
     ];
 
     const noticeRows = noticesList && noticesList.length > 0 && noticesList.map((notice) => {

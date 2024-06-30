@@ -188,9 +188,9 @@ const UpdateStudent = ({ situation }) => {
                         required/>
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
-                    {
+                    {/* {
                         situation === "Student" &&
-                        <>
+                        <> */}
                             <label>Class</label>
                             <select
                                 className="registerInput"
@@ -203,8 +203,8 @@ const UpdateStudent = ({ situation }) => {
                                     </option>
                                 ))}
                             </select>
-                        </>
-                    }
+                        {/* </>
+                    } */}
                     </Grid>
                     <Grid xs={12} md={6} lg={3} margin={2}>
                         <label>Enrolment Status</label>

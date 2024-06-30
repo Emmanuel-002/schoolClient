@@ -25,7 +25,7 @@ import ViewMessage from '../ViewMessage';
 import ReplyMessage from '../ReplyMessage';
 
 const ParentDashboard = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const toggleDrawer = () => {
         setOpen(!open);
     };

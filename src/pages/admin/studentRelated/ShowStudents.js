@@ -46,8 +46,9 @@ const ShowStudents = () => {
         dispatch(deleteUser(deleteID, address))
             .then(() => {
                 dispatch(getAllStudents(currentUser._id));
-                setMessage("User has been deleted")
+                setMessage("Done Successfully")
                 setShowPopup(true)
+                window.location.reload();
             })
     }
 
@@ -181,7 +182,10 @@ const ShowStudents = () => {
         },
         {
             icon: <PersonRemoveIcon color="error" />, name: 'Delete All Students',
-            action: () => deleteHandler(currentUser._id, "Students")
+            action: () => {
+                deleteHandler(currentUser._id, "Students") 
+                window.location.reload();
+            }
         },
     ];
 

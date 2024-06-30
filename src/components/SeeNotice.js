@@ -24,9 +24,9 @@ const SeeNotice = () => {
     }
 
     const noticeColumns = [
-        { id: 'title', label: 'Title', minWidth: 170 },
-        { id: 'details', label: 'Details', minWidth: 100 },
-        { id: 'date', label: 'Date', minWidth: 170 },
+        { id: 'title', label: 'Title', minWidth: 120 },
+        { id: 'details', label: 'Details', minWidth: 250 },
+        { id: 'date', label: 'Date', minWidth: 120 },
     ];
 
     const noticeRows = noticesList.map((notice) => {
@@ -42,7 +42,7 @@ const SeeNotice = () => {
     return (
         <div style={{ marginTop: '50px', marginRight: '20px' }}>
             {loading ? (
-                <div style={{ fontSize: '20px' }}>Loading...</div>
+                <div style={{ fontSize: '20px' }}>Please Wait...</div>
             ) : response ? (
                 <div style={{ fontSize: '20px' }}>No Notices to Show Right Now</div>
             ) : (

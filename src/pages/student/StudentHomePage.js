@@ -102,15 +102,6 @@ const StudentHomePage = () => {
                             <Data start={0} end={numberOfSubjects} duration={2.5} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
-                            <AssignmentIcon color="primary"  style={{fontSize:'5rem'}} />
-                            <Title>
-                                Total Assignments
-                            </Title>
-                            <Data start={0} end={15} duration={4} />
-                        </StyledPaper>
-                    </Grid>
                     <Grid item xs={12} md={4} lg={3}>
                         <ChartContainer>
                             {

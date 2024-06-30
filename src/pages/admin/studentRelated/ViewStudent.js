@@ -117,7 +117,6 @@ const ViewStudent = () => {
         navigate("/Admin/students/student/update/" + studentID);
     }
     const deleteHandler = () => {
-
         dispatch(deleteUser(studentID, address))
             .then(() => {
                 navigate(-1)
